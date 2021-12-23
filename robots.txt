@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brandonpow1.github.io/vn-guide/sitemap.xml.gz
