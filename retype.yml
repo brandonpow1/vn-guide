@@ -1,0 +1,11 @@
+input: .
+output: .retype
+url: # Add your website address here
+branding:
+  title: So, You Wanna Make A VN, Eh?
+  label: Ren'Py
+links:
+- text: Getting Started
+  link: https://retype.com/guides/getting-started/
+footer:
+  copyright: "&copy; Written in {{ year }}, under the MIT License."
