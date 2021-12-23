@@ -1,11 +1,13 @@
 input: .
 output: .retype
-url: # Add your website address here
+url: https://brandonpow1.github.io/vn-guide/
 branding:
   title: So, You Wanna Make A VN, Eh?
   label: Ren'Py
 links:
-- text: Getting Started
-  link: https://retype.com/guides/getting-started/
+- text: Source
+  link: https://github.com/brandonpow1/vn-guide
+  icon: mark-github
+  target: blank
 footer:
   copyright: "&copy; Written in {{ year }}, under the MIT License."
