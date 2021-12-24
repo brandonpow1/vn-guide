@@ -47,6 +47,32 @@ elif chap1_eat == "B":
     B happy "Of course you're going with me, right?"
 ```
 
+So now your gameflow looks a little like this:
+
+```mermaid
+graph LR
+    A{Eat with...} -->|A| B(chap1_eat=A)
+    A -->|B| C(chap1_eat=B)
+    B-->D[Tickets]
+    C-->D
+    D-->|if chap1_eat=A| E[Go with A]
+    D-->|if chap1_eat=B| F[Go with B]
+    E-->G
+    F-->G
+    G[Sleep]
+    subgraph Chapter 1
+    A
+    B
+    C
+    end
+    subgraph Chapter 2
+    D
+    E
+    F
+    G
+    end
+```
+
 _(I do not personally use capital letters for Character definitions, this is for clarity.)_
 
 Nice. Now it's time to publish! Everyone's gonna love the game! ...a day later your Itch page is filled with the following screenshot:
@@ -63,3 +89,51 @@ label after_load:
 ```
 
 You publish the game's fix, and all is good. The next day, more comments come in: "I didn't go to see the movie. I went straight to bed." What?!
+
+{% tabs %}
+{% tab title="New Players in Build 2" %}
+Chapter 1
+```mermaid
+graph LR
+    A{Eat with...} -->|A| B(chap1_eat=A)
+    A -->|B| C(chap1_eat=B)
+    B-->D[Tickets]
+    C-->D
+```
+Chapter 2
+```mermaid
+graph LR
+    D[Tickets]
+    D-->|if chap1_eat=A| E[Go with A]
+    D-->|if chap1_eat=B| F[Go with B]
+    E-->G
+    F-->G
+    G[Sleep]
+```
+{% endtab %}
+
+{% tab title="Returning Players from Build 1" %}
+Chapter 1 (last month or so)
+```mermaid
+graph LR
+    A{Eat with...} -->|A| B(A)
+    A -->|B| C(B)
+    B-->D[Tickets, chap1_eat not defined]
+    C-->D
+```
+Chapter 2 (today)
+```mermaid
+graph LR
+    H["after_load, chap1_eat=&quot;&quot;"]-->D
+    D[Tickets]
+    D-->|if chap1_eat=A| E["Go with A"]
+    D-->|if chap1_eat=B| F["Go with B"]
+    D==>|if chap1_eat=ANYTHING ELSE| G
+    E-->G
+    F-->G
+    G[Sleep]
+    style E fill:#bbf,stroke:#f66,stroke-width:3px,color:#fff,stroke-dasharray: 5 5
+    style F fill:#bbf,stroke:#f66,stroke-width:3px,color:#fff,stroke-dasharray: 5 5
+```
+{% endtab %}
+{% endtabs %}
