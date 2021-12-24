@@ -7,31 +7,29 @@
     <meta name="turbo-cache-control" content="no-cache">
 
     <!-- Primary Meta Tags -->
-    <title>Renpyweb</title>
-    <meta name="title" content="Renpyweb">
-    <meta name="description" content="This distribution is not compatible with Discord Rich Presence. You will have to manually delete all calls to discordrpc for every build you release." />
+    <title>Discord Rich Presence</title>
+    <meta name="title" content="Discord Rich Presence">
+    <meta name="description" content="This module is not compatible with renpyweb. If you choose to export to web browsers, before building please remember where you place all calls to" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://brandonpow1.github.io/vn-guide/technical/advanced/renpyweb/">
-    <meta property="og:title" content="Renpyweb">
-    <meta property="og:description" content="This distribution is not compatible with Discord Rich Presence. You will have to manually delete all calls to discordrpc for every build you release.">
-    <meta property="og:image" content="https://brandonpow1.github.io/vn-guide/vn-guide/assets/webbutton.webp">
+    <meta property="og:url" content="https://brandonpow1.github.io/vn-guide/technical/discord-rich-presence/">
+    <meta property="og:title" content="Discord Rich Presence">
+    <meta property="og:description" content="This module is not compatible with renpyweb. If you choose to export to web browsers, before building please remember where you place all calls to">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://brandonpow1.github.io/vn-guide/technical/advanced/renpyweb/">
-    <meta property="twitter:title" content="Renpyweb">
-    <meta property="twitter:description" content="This distribution is not compatible with Discord Rich Presence. You will have to manually delete all calls to discordrpc for every build you release.">
-    <meta property="twitter:image" content="https://brandonpow1.github.io/vn-guide/vn-guide/assets/webbutton.webp">
+    <meta property="twitter:url" content="https://brandonpow1.github.io/vn-guide/technical/discord-rich-presence/">
+    <meta property="twitter:title" content="Discord Rich Presence">
+    <meta property="twitter:description" content="This module is not compatible with renpyweb. If you choose to export to web browsers, before building please remember where you place all calls to">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/vn-guide/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/vn-guide/resources/css/retype.css?v=1.11.1.693601960799" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/vn-guide/resources/css/retype.css?v=1.11.2.693676099778" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/vn-guide/resources/js/config.js?v=1.11.1.693601960799" defer data-turbo-track="reload"></script>
-    <script type="text/javascript" src="/vn-guide/resources/js/retype.js?v=1.11.1" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/vn-guide/resources/js/lunr.js?v=1.11.1.693601960799" defer></script>
+    <script type="text/javascript" src="/vn-guide/resources/js/config.js?v=1.11.2.693676099778" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/vn-guide/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
+    <script id="lunr-js" type="text/javascript" src="/vn-guide/resources/js/lunr.js?v=1.11.2.693676099778" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -186,10 +184,10 @@
                 <div id="docs-sidebar-right-toggle"></div>
                
                 <!-- Page content  -->
-<doc-anchor-target id="renpyweb" class="break-words">
+<doc-anchor-target id="discord-rich-presence" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#renpyweb">#</doc-anchor-trigger>
-        <span>Renpyweb</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#discord-rich-presence">#</doc-anchor-trigger>
+        <span>Discord Rich Presence</span>
     </h1>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -204,33 +202,10 @@
             </svg>
         </div>
         <div class="pr-5 ml-3">
-<p>This distribution is not compatible with <a href="../discord-rich-presence/">Discord Rich Presence</a>. You will have to manually delete all calls to discordrpc for every build you release.</p>
+<p>This module is not compatible with <a href="../renpyweb/">renpyweb</a>. If you choose to export to web browsers, before building please remember where you place all calls to <code v-pre>rpc</code> and remove them, as well as the <code v-pre>python-packages</code> involved (to save space).</p>
         </div>
     </div>
 </div>
-<p>Distributing for web browsers is a great way to get people to play your game without running Ren&#x27;Py executables. Great for those who are lazy to unpack your .zip file every time you update your game.</p>
-<doc-anchor-target id="major-limitations">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#major-limitations">#</doc-anchor-trigger>
-        <span>Major Limitations</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>The asset streaming service isn&#x27;t perfect. Even with a blazing fast internet speed it can cause sprites and backgrounds to appear blurry on first display. Also music only cuts in when a significant amount loads (personal experience: ~5 seconds after <code v-pre>play</code> command). If you&#x27;re making a cutscene with timed music, consider having it preloaded in game.zip.</li>
-<li>You can&#x27;t play it on iOS browsers. Safari, Firefox, Chrome on the iPhone... they won&#x27;t let you play this. Sorry.</li>
-</ul>
-<doc-anchor-target id="how-to-set-up">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-set-up">#</doc-anchor-trigger>
-        <span>How To Set Up</span>
-    </h2>
-</doc-anchor-target>
-<ol>
-<li>Press this on the launcher- <img src="/vn-guide/assets/webbutton.webp" alt="" /> -and let it download the necessary files.</li>
-<li>Press this button- <img src="/vn-guide/assets/buildbutton.webp" alt="" /> -and wait.</li>
-<li>Your files should be in the builds folder. That&#x27;s it!</li>
-</ol>
-<p>The official website for this is <a href="https://renpy.beuc.net">https://renpy.beuc.net/</a> (Wayback Archive version <a href="https://web.archive.org/web/20210303225842/https://renpy.beuc.net/">here</a>), in case you want to read more. The github repo is <a href="https://github.com/renpy/renpyweb">here</a>.</p>
 
 
 
@@ -242,20 +217,20 @@
             
 <nav class="flex mt-14">
     <div class="w-1/2">
-        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/vn-guide/technical/advanced/">
+        <a class="px-5 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/vn-guide/technical/cardinal-sins-and-pointers/">
             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
             <span>
                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                <span class="block mt-1">Advanced</span>
+                <span class="block mt-1">Cardinal Sins & Pointers</span>
             </span>
         </a>
     </div>
 
     <div class="w-1/2">
-        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/vn-guide/technical/advanced/discord-rich-presence/">
+        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/vn-guide/technical/gallery/">
             <span>
                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                <span class="block mt-1">Discord Rich Presence</span>
+                <span class="block mt-1">Gallery</span>
             </span>
             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
         </a>
@@ -303,6 +278,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Renpyweb", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
+        <script>window.__DOCS__ = { "title": "Discord Rich Presence", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
     </body>
 </html>
