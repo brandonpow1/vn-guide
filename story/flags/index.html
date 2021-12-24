@@ -27,12 +27,13 @@
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/vn-guide/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/vn-guide/resources/css/retype.css?v=1.11.2.693676099778" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/vn-guide/resources/css/retype.css?v=1.11.2.693687954875" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/vn-guide/resources/js/config.js?v=1.11.2.693676099778" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/vn-guide/resources/js/config.js?v=1.11.2.693687954875" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/vn-guide/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/vn-guide/resources/js/lunr.js?v=1.11.2.693676099778" defer></script>
-    <script id="prism-js" type="text/javascript" src="/vn-guide/resources/js/prism.js?v=1.11.2.693676099778" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/vn-guide/resources/js/lunr.js?v=1.11.2.693687954875" defer></script>
+    <script id="prism-js" type="text/javascript" src="/vn-guide/resources/js/prism.js?v=1.11.2.693687954875" defer></script>
+    <script id="mermaid-js" type="text/javascript" src="/vn-guide/resources/js/mermaid.js?v=1.11.2" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -262,6 +263,28 @@ if chap1_eat == &quot;A&quot;:
 elif chap1_eat == &quot;B&quot;:
     B happy &quot;Of course you're going with me, right?&quot;</code></pre>
 </doc-codeblock></div>
+<p>So now your gameflow looks a little like this:</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph LR
+    A{Eat with...} --&gt;|A| B(chap1_eat=A)
+    A --&gt;|B| C(chap1_eat=B)
+    B--&gt;D[Tickets]
+    C--&gt;D
+    D--&gt;|if chap1_eat=A| E[Go with A]
+    D--&gt;|if chap1_eat=B| F[Go with B]
+    E--&gt;G
+    F--&gt;G
+    G[Sleep]
+    subgraph Chapter 1
+    A
+    B
+    C
+    end
+    subgraph Chapter 2
+    D
+    E
+    F
+    G
+    end</pre></div>
 <p><em>(I do not personally use capital letters for Character definitions, this is for clarity.)</em></p>
 <p>Nice. Now it&#x27;s time to publish! Everyone&#x27;s gonna love the game! ...a day later your Itch page is filled with the following screenshot:</p>
 <p><figure class="content-center">
@@ -277,6 +300,46 @@ elif chap1_eat == &quot;B&quot;:
     return</code></pre>
 </doc-codeblock></div>
 <p>You publish the game&#x27;s fix, and all is good. The next day, more comments come in: &quot;I didn&#x27;t go to see the movie. I went straight to bed.&quot; What?!</p>
+<doc-tabs>
+<doc-tab id="new-players-in-build-2">
+<template #title>New Players in Build 2</template>
+<p>Chapter 1</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph LR
+    A{Eat with...} --&gt;|A| B(chap1_eat=A)
+    A --&gt;|B| C(chap1_eat=B)
+    B--&gt;D[Tickets]
+    C--&gt;D</pre></div>
+<p>Chapter 2</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph LR
+    D[Tickets]
+    D--&gt;|if chap1_eat=A| E[Go with A]
+    D--&gt;|if chap1_eat=B| F[Go with B]
+    E--&gt;G
+    F--&gt;G
+    G[Sleep]</pre></div>
+</doc-tab>
+<doc-tab id="returning-players-from-build-1">
+<template #title>Returning Players from Build 1</template>
+<p>Chapter 1 (last month or so)</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph LR
+    A{Eat with...} --&gt;|A| B(A)
+    A --&gt;|B| C(B)
+    B--&gt;D[Tickets, chap1_eat not defined]
+    C--&gt;D</pre></div>
+<p>Chapter 2 (today)</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph LR
+    H[&quot;after_load, chap1_eat=&amp;quot;&amp;quot;&quot;]--&gt;D
+    D[Tickets]
+    D--&gt;|if chap1_eat=A| E[&quot;Go with A&quot;]
+    D--&gt;|if chap1_eat=B| F[&quot;Go with B&quot;]
+    D==&gt;|if chap1_eat=ANYTHING ELSE| G
+    E--&gt;G
+    F--&gt;G
+    G[Sleep]
+    style E fill:#bbf,stroke:#f66,stroke-width:3px,color:#fff,stroke-dasharray: 5 5
+    style F fill:#bbf,stroke:#f66,stroke-width:3px,color:#fff,stroke-dasharray: 5 5</pre></div>
+</doc-tab>
+</doc-tabs>
 
 
 
@@ -349,6 +412,6 @@ elif chap1_eat == &quot;B&quot;:
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "Flags", icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
+        <script>window.__DOCS__ = { "title": "Flags", icon: "file", hasPrism: true, hasMermaid: true, hasMath: false }</script>
     </body>
 </html>
