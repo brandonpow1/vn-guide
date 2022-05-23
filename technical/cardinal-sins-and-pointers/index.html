@@ -9,27 +9,27 @@
     <!-- Primary Meta Tags -->
     <title>Cardinal Sins &amp; Pointers</title>
     <meta name="title" content="Cardinal Sins & Pointers">
-    <meta name="description" content="Sins" />
+    <meta name="description" content="Don't define variables the first time in labels. Stick to the habit of define or default, or even an" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://brandonpow1.github.io/vn-guide/technical/cardinal-sins-and-pointers/">
     <meta property="og:title" content="Cardinal Sins & Pointers">
-    <meta property="og:description" content="Sins">
+    <meta property="og:description" content="Don't define variables the first time in labels. Stick to the habit of define or default, or even an">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://brandonpow1.github.io/vn-guide/technical/cardinal-sins-and-pointers/">
     <meta property="twitter:title" content="Cardinal Sins & Pointers">
-    <meta property="twitter:description" content="Sins">
+    <meta property="twitter:description" content="Don't define variables the first time in labels. Stick to the habit of define or default, or even an">
     
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/vn-guide/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="/vn-guide/resources/css/retype.css?v=1.11.2.693687954875" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/vn-guide/resources/css/retype.css?v=1.11.2.706627738112" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/vn-guide/resources/js/config.js?v=1.11.2.693687954875" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/vn-guide/resources/js/config.js?v=1.11.2.706627738112" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/vn-guide/resources/js/retype.js?v=1.11.2" defer data-turbo-track="reload"></script>
-    <script id="lunr-js" type="text/javascript" src="/vn-guide/resources/js/lunr.js?v=1.11.2.693687954875" defer></script>
+    <script id="lunr-js" type="text/javascript" src="/vn-guide/resources/js/lunr.js?v=1.11.2.706627738112" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -190,9 +190,9 @@
         <span>Cardinal Sins &amp; Pointers</span>
     </h1>
 </doc-anchor-target>
-<p>Sins</p>
 <ul>
-<li>Do NOT define variables in labels. </li>
+<li>Don&#x27;t define variables the first time in labels. Stick to the habit of <code v-pre>define</code> or <code v-pre>default</code>, or even an <code v-pre>init python:</code> if you really have to. When you define variables in labels you tend to assume they&#x27;ll work elsewhere, and then when you try to call up a screen or label without ever passing through the label with that variable definition, you get a KeyError.</li>
+<li>If you have a self-written Python script you&#x27;re proud of, that calls files, <code v-pre>os.read()</code> is likely to return an error. Try <code v-pre>renpy.file()</code> instead but remember that it&#x27;s read-only. If you need to save variables... I dunno a good fail-proof method yet.</li>
 </ul>
 <p>Good Practices</p>
 
@@ -236,7 +236,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Written in 2021, under the MIT License.</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Written in 2022, under the MIT License.</p>
 </div>
 </footer>
 
